@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langgraph-telemetry"
+version = "0.1.0"
+description = "Prometheus metrics and callbacks for LangGraph agent runs"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "LangGraph-Telemetry contributors" }]
+keywords = ["langgraph", "prometheus", "telemetry", "langchain", "observability"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: System :: Monitoring",
+]
+dependencies = [
+  "langgraph>=1.1",
+  "langchain-core>=0.3",
+  "prometheus-client>=0.20",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/suhasramanand/langgraph-telemetry"
+Repository = "https://github.com/suhasramanand/langgraph-telemetry"
+Documentation = "https://github.com/suhasramanand/langgraph-telemetry#readme"
+Changelog = "https://github.com/suhasramanand/langgraph-telemetry/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

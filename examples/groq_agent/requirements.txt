@@ -1,0 +1,3 @@
+#   pip install -e ../../packages/langgraph-telemetry
+#   pip install -r requirements.txt
+langchain-groq>=0.2
